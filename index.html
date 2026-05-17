@@ -7,7 +7,7 @@
 
     <!-- Meta Tags for Facebook & SEO -->
     <meta property="og:title" content="MEGA BONUSoffer200tk">
-    <meta property="og:description" content="Click to chat on WhatsApp">
+    <meta property="og:description" content="Click to register and get 200tk bonus">
     <meta property="og:image" content="fb1.webp">
     <meta property="og:type" content="website">
     
@@ -36,26 +36,67 @@
             position: relative;
             width: 100%;
             height: 100%;
-            max-width: 576px; /* standard 9:16 mobile width */
+            max-width: 576px;
             margin: 0 auto;
             background-image: url('fb1.webp');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 30px; /* ডিসপ্লের নিচে বাটনগুলোর জন্য স্পেস */
         }
 
-        /* Premium WhatsApp Button Style (Positioned ~0.5 inch from bottom) */
-        .whatsapp-btn {
-            position: absolute;
-            bottom: 40px; /* ডিসপ্লের নিচে থেকে আনুমানিক হাফ ইঞ্চি উপরে */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 85%;
-            max-width: 320px;
-            padding: 14px 20px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
+        /* Top Ad Wrapper */
+        .top-ad-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 10px;
+            z-index: 100;
+        }
+
+        /* Bottom UI Box (Text + Buttons) */
+        .bottom-content-box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        /* glowing Bangla Notice Text */
+        .bonus-notice-text {
             color: #ffffff;
-            font-size: 18px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            animation: textGlow 2s infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from { border-color: rgba(255, 255, 255, 0.2); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); }
+            to { border-color: #ffcc00; box-shadow: 0 4px 20px rgba(255, 204, 0, 0.3); }
+        }
+
+        /* Common Button Styling (Pop-up & Blazing Effect) */
+        .action-btn {
+            width: 90%;
+            max-width: 340px;
+            padding: 14px 20px;
+            color: #ffffff;
+            font-size: 16px;
             font-weight: 700;
             text-align: center;
             text-decoration: none;
@@ -63,68 +104,152 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            gap: 12px;
+            margin-bottom: 12px;
             letter-spacing: 0.5px;
-            transition: transform 0.1s ease, box-shadow 0.2s ease;
-            
-            /* হালকা নড়াচড়ার অ্যানিমেশন */
-            animation: pulseGlow 2s infinite ease-in-out;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: transform 0.1s ease;
         }
 
-        /* WhatsApp SVG Icon */
-        .whatsapp-btn svg {
-            width: 24px;
-            height: 24px;
+        /* Facebook Button Styles (Blue Blazing) */
+        .fb-btn {
+            background: linear-gradient(135deg, #1877F2, #0056b3);
+            box-shadow: 0 0 15px rgba(24, 119, 242, 0.6);
+            animation: popupBlazeFb 2.5s infinite ease-in-out;
+        }
+
+        /* Chrome Button Styles (Yellow/Red/Green Blazing) */
+        .chrome-btn {
+            background: linear-gradient(135deg, #ffcc00, #db4437, #0f9d58);
+            background-size: 200% 200%;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
+            animation: popupBlazeChrome 2.5s infinite ease-in-out, gradientShift 4s infinite linear;
+        }
+
+        /* SVG Logos Styling */
+        .action-btn svg {
+            width: 22px;
+            height: 22px;
             fill: #fff;
         }
 
-        /* বাটনটি হালকা নড়ার (Pulse & Glow) অ্যানিমেশন */
-        @keyframes pulseGlow {
-            0% {
-                transform: translateX(-50%) scale(1);
-                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-            }
-            50% {
-                transform: translateX(-50%) scale(1.03);
-                box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
-            }
-            100% {
-                transform: translateX(-50%) scale(1);
-                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-            }
+        /* Animations for Facebook Button (Pop & Blaze) */
+        @keyframes popupBlazeFb {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 12px rgba(24, 119, 242, 0.5); }
+            50% { transform: scale(1.04); box-shadow: 0 0 25px rgba(24, 119, 242, 0.9), 0 0 10px #fff; }
         }
 
-        /* ক্লিক করার পর বাস্তব অনুভূতি (Click Effect) */
-        .whatsapp-btn:active {
-            transform: translateX(-50%) scale(0.95) !important;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
-            background: linear-gradient(135deg, #128C7E, #075E54);
+        /* Animations for Chrome Button (Pop & Blaze) */
+        @keyframes popupBlazeChrome {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 12px rgba(255, 204, 0, 0.5); }
+            50% { transform: scale(1.04); box-shadow: 0 0 25px rgba(255, 204, 0, 0.9), 0 0 10px #fff; }
+        }
+
+        /* Background gradient move for chrome button */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Click/Active State Effect */
+        .action-btn:active {
+            transform: scale(0.95) !important;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5) !important;
         }
     </style>
 </head>
 <body>
 
     <div class="landing-container">
-        <!-- Premium WhatsApp Button -->
-        <a href="https://wa.me/6285168830914" class="whatsapp-btn" id="waBtn">
-            <!-- WhatsApp Icon -->
-            <svg viewBox="0 0 24 24">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.4 0 11.973 0c3.184.001 6.177 1.242 8.426 3.496 2.248 2.253 3.487 5.244 3.484 8.428-.004 6.654-5.34 12-11.918 12-2.007-.001-3.98-.507-5.73-1.472L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.528 1.981 14.063.96 11.435.96c-5.436 0-9.863 4.37-9.867 9.8 0 1.74.475 3.44 1.374 4.97l-.995 3.637 3.715-.974zm12.634-5.45c-.328-.164-1.942-.955-2.242-1.064-.3-.11-.518-.165-.736.165-.219.329-.848 1.064-1.039 1.283-.192.219-.383.245-.712.081-.328-.164-1.386-.51-2.64-1.627-.975-.869-1.633-1.942-1.824-2.271-.192-.329-.021-.507.143-.671.147-.146.328-.383.493-.575.164-.192.219-.328.328-.547.11-.219.055-.411-.027-.575-.082-.164-.736-1.776-1.009-2.434-.267-.641-.54-.555-.736-.555-.192-.002-.411-.002-.63-.002s-.575.082-.876.411c-.3.329-1.148 1.122-1.148 2.736 0 1.614 1.176 3.174 1.341 3.393.164.22 2.313 3.532 5.6 4.954.783.339 1.394.541 1.87.692.786.25 1.5.215 2.065.13.63-.094 1.942-.793 2.216-1.558.274-.766.274-1.422.192-1.558-.081-.137-.3-.219-.629-.383z"/>
-            </svg>
-            WhatsApp- এ নিয়ে নিন
-        </a>
+        
+        <!-- ================= BANNER AD START ================= -->
+        <div class="top-ad-wrapper">
+            <script>
+                atOptions = {
+                    'key' : 'cc1f7e32ec5d6d8ff7769a92551e626a',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                };
+            </script>
+            <script src="https://www.highperformanceformat.com/cc1f7e32ec5d6d8ff7769a92551e626a/invoke.js"></script>
+        </div>
+        <!-- ================= BANNER AD END ================= -->
+
+        <!-- Bottom Section -->
+        <div class="bottom-content-box">
+            
+            <!-- Bangla Notice Description Text -->
+            <div class="bonus-notice-text">
+                নতুন নিবন্ধনে পাবেন ২০০ টাকা বোনাস কোন এক্সট্রা চার্জ নাই। এখনই নিচের বাটনে ক্লিক করে নিবন্ধন সম্পূর্ণ করুন এবং ২০০ টাকার বোনাস নিয়ে নিন।
+            </div>
+
+            <!-- Facebook Browser Button -->
+            <button class="action-btn fb-btn" id="fbBrowserBtn">
+                <!-- Facebook Icon -->
+                <svg viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                Open With Facebook Browser
+            </button>
+
+            <!-- Chrome Browser Button -->
+            <button class="action-btn chrome-btn" id="chromeBrowserBtn">
+                <!-- Chrome Icon -->
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm0 3.84c1.824 0 3.456.672 4.752 1.776l-4.752 4.752H5.568C6.672 6.432 9.12 3.84 12 3.84zm-6.24 8.16c0-.96.24-1.872.672-2.688l4.128 7.152a6.204 6.204 0 0 1-4.8-4.464zm12.48 4.464c-1.104 1.728-3.024 2.88-5.232 2.88-.336 0-.672-.048-.96-.096l4.128-7.152h4.128c-.24 1.728-1.056 3.264-2.064 4.368zM12 7.68c2.376 0 4.32 1.944 4.32 4.32S14.376 16.32 12 16.32 7.68 14.376 7.68 12 9.624 7.68 12 7.68z"/>
+                </svg>
+                Open With Chrome Browser
+            </button>
+
+        </div>
+
     </div>
 
     <script>
-        // সুপারফাস্ট রিডাইরেকশন এবং রিয়েল-ক্লিক ভাইব্রেশন ইফেক্ট
-        const waBtn = document.getElementById('waBtn');
-        
-        waBtn.addEventListener('click', function(e) {
-            // মোবাইল ডিভাইসে হালকা ভাইব্রেশন ইফেক্ট
-            if (navigator.vibrate) {
-                navigator.vibrate(15); 
+        // আপনার দেওয়া মূল অফার লিংক
+        const offerUrl = "https://12xbet.pages.dev/";
+
+        // ফোনের ক্রোম ব্রাউজারে লিংক ওপেন করার স্পেশাল ইন্টেন্ট ট্রিকস
+        function forceOpenInChrome(url) {
+            const ua = navigator.userAgent || navigator.vendor || window.opera;
+            const isAndroid = /Android/i.test(ua);
+            
+            if (isAndroid) {
+                // অ্যান্ড্রয়েড ডিভাইসের জন্য সরাসরি গুগল ক্রোম অ্যাপে পুশ করার কমান্ড
+                const chromeIntent = "intent://" + url.replace(/^https?:\/\//, "") + "#Intent;scheme=https;package=com.android.chrome;end";
+                window.location.href = chromeIntent;
+            } else {
+                // iOS বা অন্যান্য ডিভাইসের ক্ষেত্রে নরমাল উইন্ডো রিডাইরেকশন
+                window.location.href = url;
             }
+        }
+
+        // হ্যাপটিক ভাইব্রেশন ফাংশন (বাস্তব ক্লিকের অনুভূতির জন্য)
+        function triggerVibration() {
+            if (navigator.vibrate) {
+                navigator.vibrate(15);
+            }
+        }
+
+        // ১. ফেসবুক ব্রাউজার বাটন ক্লিক ইভেন্ট Handler
+        const fbBtn = document.getElementById('fbBrowserBtn');
+        fbBtn.addEventListener('click', function() {
+            triggerVibration();
+            // এটি সাধারণ নিয়মে লিংক খুলবে (ফেসবুকের ভেতরে থাকলে ফেসবুক ব্রাউজারেই খুলবে)
+            window.location.href = offerUrl;
+        });
+
+        // ২. ক্রোম ব্রাউজার বাটন ক্লিক ইভেন্ট Handler
+        const chromeBtn = document.getElementById('chromeBrowserBtn');
+        chromeBtn.addEventListener('click', function() {
+            triggerVibration();
+            // এটি ফেসবুক ব্রাউজার ব্লক করে সরাসরি ক্রোম ব্রাউজার ওপেন করবে
+            forceOpenInChrome(offerUrl);
         });
     </script>
 </body>
